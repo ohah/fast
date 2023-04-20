@@ -2,7 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+.tooltip {
+  @apply bg-slate-700 text-gray-200 border-black dark:bg-slate-900 border rounded dark:border-slate-600 dark:text-gray-200 px-1 py-0.5 text-xs;
+}
+
+.tooltip-arrow::before {
+  content:'';
+  @apply w-0 h-0 border-[7px] pointer-events-none transition-all ease-out duration-150 z-50 absolute;
+}
+
+.tooltip-arrow::after {
+  content:'';
+  @apply w-0 h-0 border-[6px] pointer-events-none transition-all ease-out duration-150 z-50 absolute;
+}
+
+.tooltip-top::before, .tooltip-top-start::before, .tooltip-top-end::before {
+  @apply top-[100%] left-[50%] -translate-x-1/2 border-solid border-transparent border-t-black;
+}
+
+.tooltip-top::after, .tooltip-top-start::after, .tooltip-top-end::after {
+  @apply top-[100%] left-[50%] -translate-x-1/2 border-solid border-transparent border-t-slate-700;
+}
+
+.tooltip-bottom::before, .tooltip-bottom-start::before, .tooltip-bottom-end::before {
+  @apply bottom-[100%] left-[50%] -translate-x-1/2 border-solid border-transparent border-b-black;
+}
+
+.tooltip-bottom::after, .tooltip-bottom-start::after, .tooltip-bottom-end::after {
+  @apply bottom-[100%] left-[50%] -translate-x-1/2 border-solid border-transparent border-b-slate-700;
+}
+
+.tooltip-left::before, .tooltip-left-start::before, .tooltip-left-end::before {
+  @apply top-[50%] left-[100%] -translate-y-1/2 border-solid border-transparent border-l-black;
+}
+
+.tooltip-left::after, .tooltip-left-start::after, .tooltip-left-end::after {
+  @apply top-[50%] left-[100%] -translate-y-1/2 border-solid border-transparent border-l-slate-700;
+}
+
+.tooltip-right::before, .tooltip-right-start::before, .tooltip-right-end::before {
+  @apply top-[50%] right-[100%] -translate-y-1/2 border-solid border-transparent border-r-black;
+}
+
+.tooltip-right::after, .tooltip-right-start::after, .tooltip-right-end::after {
+  @apply top-[50%] right-[100%] -translate-y-1/2 border-solid border-transparent border-r-slate-700;
+}
+@layer components {
+ 
+}
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +72,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
